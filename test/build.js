@@ -22,6 +22,7 @@ module.exports.build = function(assert) {
   assert.equal(xlsData instanceof Buffer, true);
   assert.equal(xlsData.toString('base64').substr(0, 12), fs.readFileSync(filename).toString('base64').substr(0, 12));
 
-  assert.done();
+	// This doesn't exist in the version of assert that I'm passing-thru/injecting into parse
+  //assert.done();
 
 };

@@ -20,6 +20,9 @@ module.exports.parse = function(assert) {
   // parse file
   xlsObject = plist.parse(filename);
   assert.equal(!!(xlsObject && xlsObject.worksheets), true);
+	console.log('xlsObject.worksheets:',JSON.stringify(xlsObject.worksheets));
+	console.log('fixture:',JSON.stringify(fixture));
+
   assert.deepEqual(xlsObject.worksheets, fixture);
 
   // parse buffer
@@ -27,6 +30,7 @@ module.exports.parse = function(assert) {
   assert.equal(!!(xlsObject && xlsObject.worksheets), true);
   assert.deepEqual(xlsObject.worksheets, fixture);
 
-  assert.done();
+	// This doesn't exist in the version of assert that I'm passing-thru/injecting into parse
+  //assert.done();
 
 };
